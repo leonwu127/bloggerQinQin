@@ -1,0 +1,97 @@
+/**
+ * 引入 PrismJS 主题样式，同时添加自定义增强
+ */
+
+/* 主题导入 - Okaidia 主题（深色背景） */
+@import "prismjs/themes/prism-okaidia.css";
+
+/* 行号样式导入 */
+@import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+/* 自定义增强样式 */
+:root {
+  --code-block-bg: #272822;
+  --code-block-border: #2d2d2d;
+  --code-block-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 改进代码块外观 */
+pre[class*="language-"] {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--code-block-shadow);
+  border: 1px solid var(--code-block-border);
+  overflow: hidden;
+}
+
+/* 添加代码块顶部栏 */
+pre[class*="language-"]::before {
+  content: "";
+  display: block;
+  height: 24px;
+  background: var(--code-block-border);
+  margin: -0.5em -1em 0.5em;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #444;
+}
+
+/* 调整行号样式 */
+.line-numbers .line-numbers-rows {
+  padding: 1em 0;
+  padding-top: 2.3em;
+  border-right-color: #444;
+}
+
+/* 行号字体样式调整 */
+.line-numbers-rows > span:before {
+  color: #888;
+}
+
+/* 内联代码样式 */
+:not(pre) > code[class*="language-"] {
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  white-space: normal;
+  background: rgba(39, 40, 34, 0.1);
+  color: #d14;
+  text-shadow: none;
+}
+
+/* 代码高亮行 */
+.gatsby-highlight-code-line {
+  background-color: rgba(255, 255, 255, 0.07);
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+
+/* 改善滚动条样式 */
+pre[class*="language-"]::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+  background: #272822;
+}
+
+/* 语言标识 */
+pre[class*="language-"]::after {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  right: 15px;
+  color: #abb2bf;
+  font-size: 0.8em;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+} 

@@ -8,43 +8,56 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <article>
-        <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+      <article className="w-full mx-auto">
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold mb-2 text-primary-800">{post.frontmatter.title}</h1>
+          <p className="text-gray-500">{post.frontmatter.date}</p>
+          <div className="h-1 w-24 bg-primary-500 mt-6"></div>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
+        
+        <div className="bg-white p-8 rounded-lg shadow-md mb-8">
+          <section
+            className="max-w-none text-gray-800"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+        </div>
+        
         <footer>
-          <nav>
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
-          </nav>
+          <div className="border-t border-gray-200 pt-6 mt-8">
+            <nav>
+              <ul className="flex flex-wrap justify-between">
+                <li className="mr-4">
+                  {previous && (
+                    <Link 
+                      to={previous.fields.slug} 
+                      rel="prev"
+                      className="flex items-center text-primary-600 hover:text-primary-800"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                      </svg>
+                      {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link 
+                      to={next.fields.slug} 
+                      rel="next"
+                      className="flex items-center text-primary-600 hover:text-primary-800"
+                    >
+                      {next.frontmatter.title}
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
+          </div>
         </footer>
       </article>
     </Layout>
