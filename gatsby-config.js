@@ -13,7 +13,7 @@ module.exports = {
     title: `BloggerQinQin`,
     description: `A personal blog built with Gatsby`,
     author: `QinQin`,
-    siteUrl: `https://your-username.github.io/bloggerQinQin`, // 替换为你的 GitHub 用户名
+    siteUrl: `https://leonwu127.github.io/bloggerQinQin`, // 替换为你的 GitHub 用户名
   },
   plugins: [
     `gatsby-plugin-postcss`,
