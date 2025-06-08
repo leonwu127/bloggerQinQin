@@ -1,36 +1,36 @@
 # BloggerQinQin
 
-A simple and elegant blog built with Gatsby. This project is a starter template for creating a personal blog using modern web technologies.
+A simple and elegant blog built with Gatsby. This project initially served as a starter template for creating a personal blog. The blog content and related files have now been archived under the `blog.old` directory as the focus shifts to building a personal profile website.
 
 ## 🚀 Project Structure
 
 ```
 /
-├── content/
-│   └── blog/
-│       ├── hello-world/
-│       │   └── index.md
-│       └── getting-started-with-gatsby/
-│           └── index.md
+├── blog.old/
+│   └── content/
+│       └── blog/
+│           └── hello-world/
+│               └── index.md
 ├── src/
 │   ├── components/
-│   │   ├── layout.js
-│   │   └── blogPost.js
+│   │   └── layout.js
 │   └── pages/
-│       ├── index.js
-│       └── about.js
+│       └── index.js
 ├── gatsby-config.js
-├── gatsby-node.js
+├── blog.old/
+│   ├── about.js
+│   ├── blogPost.js
+│   └── gatsby-node.js
 └── package.json
 ```
 
 ## 🧐 What's inside?
 
-- **content/blog**: This directory contains blog posts written in Markdown.
-- **src/components**: This directory contains React components used across the site.
-- **src/pages**: This directory contains React components that automatically become pages with URLs.
-- **gatsby-config.js**: This file defines the site metadata and Gatsby plugins configuration.
-- **gatsby-node.js**: This file implements Gatsby's Node.js API to customize and extend default settings affecting the build process.
+- **blog.old/content/blog**: Archived Markdown blog posts.
+- **src/components**: React components used across the site.
+- **src/pages**: React components that automatically become pages with URLs.
+- **gatsby-config.js**: Defines the site metadata and Gatsby plugins configuration.
+- **blog.old/gatsby-node.js**: Previous Gatsby Node API customization for the blog.
 
 ## 🚀 Getting Started
 
@@ -85,9 +85,9 @@ Looking for more guidance? Here are some resources:
 
 ## 📝 Adding Content
 
-To add a new blog post:
+To add a new blog post (archived in `blog.old/content/blog`):
 
-1. Create a new directory under `content/blog` with a name related to your post
+1. Create a new directory under `blog.old/content/blog` with a name related to your post
 2. Create an `index.md` file inside this directory
 3. Add the frontmatter at the top of the file:
    ```
@@ -105,5 +105,6 @@ You can customize various aspects of the blog:
 
 - Site metadata in `gatsby-config.js`
 - Site layout in `src/components/layout.js`
-- Page templates in `src/components/blogPost.js`
-- Add new pages in `src/pages/` 
+- Page templates in `blog.old/blogPost.js`
+- Archived pages such as `blog.old/about.js`
+

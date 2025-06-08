@@ -29,7 +29,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/content/blog`,
+        // Archived blog content now lives in blog.old
+        path: `${__dirname}/blog.old/content/blog`,
       },
     },
     {
