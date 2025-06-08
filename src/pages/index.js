@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import Layout from "../components/layout";
-import { profile } from '../data/profile';
-import { experiences } from '../data/experience';
-import { skills } from '../data/skills';
-import { education } from '../data/education';
-import { interests } from '../data/interests';
+import { profile } from "../data/profile";
+import { experiences } from "../data/experience";
+import { skills } from "../data/skills";
+import { education } from "../data/education";
+import { interests } from "../data/interests";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -15,17 +15,41 @@ const Portfolio = () => {
     <Layout>
       <div className="min-h-screen bg-gray-50">
         {/* Header Section */}
-        <header className="bg-white shadow-lg">
-          <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold text-gray-800">{profile.name}</h1>
-            <div className="flex items-center space-x-4 mt-4">
-              <a href={`mailto:${profile.email}`} className="flex items-center text-gray-600 hover:text-gray-800">
-                <FaEnvelope className="mr-2" />
-                <span>{profile.email}</span>
+        <header className="bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 text-white shadow-lg">
+          <div className="container mx-auto px-4 py-16 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl font-extrabold tracking-tight"
+            >
+              {profile.name}
+            </motion.h1>
+            <p className="mt-2 text-xl font-medium">{profile.title}</p>
+            <div className="flex justify-center space-x-6 mt-6">
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-200"
+              >
+                <FaGithub size={24} />
               </a>
-              <a href={`tel:${profile.phone}`} className="flex items-center text-gray-600 hover:text-gray-800">
-                <FaPhone className="mr-2" />
-                <span>{profile.phone}</span>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-200"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href={`mailto:${profile.email}`}
+                className="hover:text-gray-200"
+              >
+                <FaEnvelope size={24} />
+              </a>
+              <a href={`tel:${profile.phone}`} className="hover:text-gray-200">
+                <FaPhone size={24} />
               </a>
             </div>
           </div>
@@ -62,16 +86,20 @@ const Portfolio = () => {
                     <p className="text-lg font-semibold mt-2">{exp.role}</p>
                   </div>
                   <button
-                    onClick={() => setActiveSection(activeSection === index ? null : index)}
+                    onClick={() =>
+                      setActiveSection(activeSection === index ? null : index)
+                    }
                     className="text-blue-600 hover:text-blue-800"
                   >
-                    {activeSection === index ? 'Show Less' : 'Show More'}
+                    {activeSection === index ? "Show Less" : "Show More"}
                   </button>
                 </div>
                 {activeSection === index && (
                   <ul className="mt-4 space-y-2">
                     {exp.details.map((detail, i) => (
-                      <li key={i} className="text-gray-700">{detail}</li>
+                      <li key={i} className="text-gray-700">
+                        {detail}
+                      </li>
                     ))}
                   </ul>
                 )}
@@ -92,7 +120,9 @@ const Portfolio = () => {
               >
                 <h3 className="text-xl font-bold">{edu.degree}</h3>
                 <p className="text-gray-600">{edu.school}</p>
-                <p className="text-gray-700 mt-2">{edu.grade} ({edu.period})</p>
+                <p className="text-gray-700 mt-2">
+                  {edu.grade} ({edu.period})
+                </p>
               </motion.div>
             ))}
           </div>
@@ -129,7 +159,9 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.02 }}
                 className="bg-white rounded-lg shadow-lg p-6"
               >
-                <h3 className="text-xl font-bold mb-4 capitalize">{category}</h3>
+                <h3 className="text-xl font-bold mb-4 capitalize">
+                  {category}
+                </h3>
                 <ul className="list-disc list-inside text-gray-700">
                   {items.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -146,4 +178,4 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-export const Head = () => <title>Zhiqing Wu - Portfolio</title> 
+export const Head = () => <title>Zhiqing Wu - Portfolio</title>;

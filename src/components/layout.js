@@ -1,15 +1,14 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import "../styles/global.css"
-import "../styles/prism-theme.css"
+import * as React from "react";
+import { Link } from "gatsby";
+import { profile } from "../data/profile";
+import "../styles/global.css";
+import "../styles/prism-theme.css";
 
 const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
-        {children}
-      </main>
-      
+      <main className="flex-grow">{children}</main>
+
       <footer className="bg-gray-50 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
@@ -19,9 +18,9 @@ const Layout = ({ children }) => {
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-4">
                 <li>
-                  <a 
-                    href="https://github.com" 
-                    target="_blank" 
+                  <a
+                    href={profile.github}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-primary-600"
                   >
@@ -29,9 +28,9 @@ const Layout = ({ children }) => {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://linkedin.com" 
-                    target="_blank" 
+                  <a
+                    href={profile.linkedin}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-primary-600"
                   >
@@ -44,7 +43,7 @@ const Layout = ({ children }) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout 
+export default Layout;
