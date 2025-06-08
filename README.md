@@ -1,36 +1,30 @@
 # BloggerQinQin
 
-A simple and elegant blog built with Gatsby. This project is a starter template for creating a personal blog using modern web technologies.
+Originally this repository hosted a Gatsby blog. That blog has been moved into the `blog.old` directory for reference. The current project is a personal profile website that highlights my experience, education and skills.
 
 ## 🚀 Project Structure
 
 ```
 /
-├── content/
-│   └── blog/
-│       ├── hello-world/
-│       │   └── index.md
-│       └── getting-started-with-gatsby/
-│           └── index.md
+├── blog.old/          # archived blog implementation
 ├── src/
 │   ├── components/
-│   │   ├── layout.js
-│   │   └── blogPost.js
-│   └── pages/
-│       ├── index.js
-│       └── about.js
+│   ├── pages/
+│   ├── data/
+│   └── styles/
+├── static/
 ├── gatsby-config.js
-├── gatsby-node.js
 └── package.json
 ```
 
 ## 🧐 What's inside?
 
-- **content/blog**: This directory contains blog posts written in Markdown.
-- **src/components**: This directory contains React components used across the site.
-- **src/pages**: This directory contains React components that automatically become pages with URLs.
-- **gatsby-config.js**: This file defines the site metadata and Gatsby plugins configuration.
-- **gatsby-node.js**: This file implements Gatsby's Node.js API to customize and extend default settings affecting the build process.
+- **blog.old/content/blog**: Archived Markdown blog posts.
+- **src/components**: React components that build the profile UI.
+- **src/pages**: Gatsby pages for the profile website.
+- **src/data**: Structured data used to render profile content.
+- **gatsby-config.js**: Site metadata and Gatsby plugin configuration.
+- **blog.old/gatsby-node.js**: Build customization for the archived blog.
 
 ## 🚀 Getting Started
 
@@ -83,27 +77,18 @@ Looking for more guidance? Here are some resources:
 - [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/)
 - [Gatsby Recipes](https://www.gatsbyjs.com/docs/recipes/)
 
-## 📝 Adding Content
+## 📝 Editing Profile Content
 
-To add a new blog post:
+Profile details are defined in the files inside `src/data`. Update these JSON-like modules to change your experience, education, interests and skills.
 
-1. Create a new directory under `content/blog` with a name related to your post
-2. Create an `index.md` file inside this directory
-3. Add the frontmatter at the top of the file:
-   ```
-   ---
-   title: "Your Post Title"
-   date: "YYYY-MM-DD"
-   description: "A brief description of your post"
-   ---
-   ```
-4. Write your post content below the frontmatter using Markdown syntax
+The previous blog workflow still exists under `blog.old/content/blog` if you want to add or edit Markdown posts.
 
 ## 🎨 Customization
 
-You can customize various aspects of the blog:
+You can customize various aspects of the profile site:
 
 - Site metadata in `gatsby-config.js`
-- Site layout in `src/components/layout.js`
-- Page templates in `src/components/blogPost.js`
-- Add new pages in `src/pages/` 
+- Layout components in `src/components/`
+- Data files in `src/data/`
+- Archived blog templates in `blog.old/`
+
